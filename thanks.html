@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks | Media Metrics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f; --bg-elevated: #111118;
+            --text-primary: #e8e6e1; --text-secondary: #9a9890; --text-muted: #5c5a55;
+            --accent: #3ecf8e; --accent-glow: rgba(62,207,142,0.06);
+            --border: rgba(62,207,142,0.08);
+            --serif: 'PT Serif', Georgia, serif; --sans: 'PT Sans', -apple-system, sans-serif;
+        }
+        html { overflow-x: hidden; }
+        body { font-family: var(--sans); background: var(--bg-primary); color: var(--text-secondary); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .nav-logo { display: flex; align-items: center; height: 48px; }
+        .logo-full { height: 42px; width: auto; }
+        .nav-cta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; padding: 0.5rem 1.25rem; border: 1px solid rgba(62,207,142,0.3); border-radius: 2px; transition: all 0.3s ease; }
+        .nav-cta:hover { background: var(--accent); color: var(--bg-primary); }
+
+        main { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden; }
+        main::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; }
+
+        .message { position: relative; }
+        .label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+        h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; color: var(--text-primary); margin-bottom: 1.25rem; }
+        p { font-size: 1.05rem; line-height: 1.8; max-width: 480px; margin: 0 auto 2rem; }
+        .back-btn { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bg-primary); background: var(--accent); text-decoration: none; padding: 0.9rem 2.25rem; border-radius: 2px; transition: all 0.3s ease; }
+        .back-btn:hover { background: #2db77a; transform: translateY(-1px); box-shadow: 0 8px 30px rgba(62,207,142,0.2); }
+
+        footer { padding: 1.75rem 2rem; border-top: 1px solid var(--border); text-align: center; }
+        footer p { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; }
+
+        @media (max-width: 480px) { nav { padding: 1rem 1.5rem; } main { padding: 5rem 1.25rem 3rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
+        </div>
+        <a href="/" class="nav-cta">Back to home</a>
+    </nav>
+
+    <main>
+        <div class="message">
+            <p class="label">Message received</p>
+            <h1>Thanks for getting in touch.</h1>
+            <p>We&#8217;ll review your message and get back to you within 24 hours.</p>
+            <a href="/" class="back-btn">Back to home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&#169; 2026 Media Metrics. London, UK.</p>
+    </footer>
+</body>
+</html>
