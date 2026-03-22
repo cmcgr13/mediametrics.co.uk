@@ -48,12 +48,8 @@
         .section-title { font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.25; color: var(--text-primary); margin-bottom: 1.5rem; }
 
         /* Story section */
-        .story { display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
         .story-text p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
         .story-text p:last-child { margin-bottom: 0; }
-
-        .headshot-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.75rem; }
-        .headshot-placeholder span { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 
         /* Why section */
         .why-grid { display: flex; flex-direction: column; gap: 0; margin-top: 1.5rem; }
@@ -68,8 +64,6 @@
         footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
         @media (max-width: 768px) {
-            .story { grid-template-columns: 1fr; gap: 2.5rem; }
-            .headshot-placeholder { aspect-ratio: 4/3; max-width: 320px; }
             .container, .container--narrow { padding: 0 1.5rem 3.5rem; }
             nav { padding: 1rem 1.5rem; }
         }
@@ -97,20 +91,12 @@
             <p class="page-label">Who we are</p>
             <h1 class="page-title">About Media Metrics</h1>
 
-            <div class="story">
-                <div class="story-text">
-                    <p class="section-label">Our story</p>
-                    <h2 class="section-title">Built from the inside out</h2>
-                    <p>Media Metrics was founded by Conor McGregor, a performance marketer with over a decade of experience managing paid media and demand generation programmes for B2B technology companies.</p>
-                    <p>Having spent years running campaigns in-house &mdash; managing multi-product portfolios across Google, Microsoft, and LinkedIn Ads &mdash; Conor built Media Metrics to give B2B companies access to that same level of strategic depth without the overhead of a full-time hire.</p>
-                    <p>We&#8217;re based in the UK and work with clients nationwide.</p>
-                </div>
-                <div>
-                    <div class="headshot-placeholder" aria-label="Headshot coming soon">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(92,90,85,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                        <span>Photo coming soon</span>
-                    </div>
-                </div>
+            <div class="story-text">
+                <p class="section-label">Our story</p>
+                <h2 class="section-title">Built from the inside out</h2>
+                <p>Media Metrics was founded by Conor McGregor, a performance marketer with over a decade of experience managing paid media and demand generation programmes for B2B technology companies.</p>
+                <p>Having spent years running campaigns in-house &mdash; managing multi-product portfolios across Google, Microsoft, and LinkedIn Ads &mdash; Conor built Media Metrics to give B2B companies access to that same level of strategic depth without the overhead of a full-time hire.</p>
+                <p>We&#8217;re based in the UK and work with clients nationwide.</p>
             </div>
 
             <div class="divider"></div>
