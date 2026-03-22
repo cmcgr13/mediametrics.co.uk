@@ -52,8 +52,14 @@
         .empty-state { padding: 3rem 0; }
         .empty-state p { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
 
-        /* Future post card grid — ready to populate */
         .posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+        .post-card { display: flex; flex-direction: column; padding: 2rem; border: 1px solid var(--border); border-radius: 3px; background: var(--bg-card); text-decoration: none; transition: border-color 0.3s ease; }
+        .post-card:hover { border-color: rgba(62,207,142,0.3); }
+        .post-card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+        .post-card h2 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--text-primary); margin-bottom: 0.75rem; }
+        .post-card p { font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); flex: 1; margin-bottom: 1.5rem; }
+        .post-card-meta { font-size: 0.78rem; color: var(--text-secondary); display: flex; align-items: center; gap: 1rem; }
+        .post-card-read { font-size: 0.78rem; color: var(--accent); letter-spacing: 0.05em; margin-top: 0; }
 
         footer { padding: 1.75rem 2rem; border-top: 1px solid var(--border); text-align: center; }
         footer p { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; }
@@ -115,11 +121,17 @@
 
             <div class="divider"></div>
 
-            <div class="empty-state">
-                <p>New posts coming soon.</p>
+            <div class="posts-grid">
+                <a href="/blog/b2b-paid-media-glasgow-pipeline/" class="post-card">
+                    <p class="post-card-label">Paid Media Strategy</p>
+                    <h2>B2B Paid Media in Glasgow: Why Most Campaigns Fail to Generate Pipeline</h2>
+                    <p>Spending on Google Ads or LinkedIn but can't connect it to revenue? Here's why most B2B paid media campaigns underperform — and what a pipeline-focused programme actually looks like.</p>
+                    <div class="post-card-meta">
+                        <span>March 2026</span>
+                        <span>8 min read</span>
+                    </div>
+                </a>
             </div>
-
-            <!-- Post cards go here in .posts-grid when ready -->
         </div>
     </main>
 
