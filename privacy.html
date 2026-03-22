@@ -60,6 +60,17 @@
         footer a { font-size: 0.75rem; color: var(--text-muted); border-bottom-color: rgba(92,90,85,0.4); }
         footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+        #cookie-banner { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 999; width: calc(100% - 3rem); max-width: 720px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
+        #cookie-banner p { font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+        #cookie-banner p a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(62,207,142,0.3); transition: border-color 0.3s; }
+        #cookie-banner p a:hover { border-color: var(--accent); }
+        .cookie-btns { display: flex; gap: 0.6rem; flex-shrink: 0; }
+        .cookie-btn-accept { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg-primary); background: var(--accent); border: none; padding: 0.55rem 1.1rem; border-radius: 2px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+        .cookie-btn-accept:hover { background: #2db77a; }
+        .cookie-btn-necessary { font-family: var(--sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); background: transparent; border: 1px solid rgba(92,90,85,0.35); padding: 0.55rem 1.1rem; border-radius: 2px; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .cookie-btn-necessary:hover { color: var(--text-secondary); border-color: var(--text-muted); }
+        @media (max-width: 600px) { #cookie-banner { flex-direction: column; align-items: flex-start; gap: 1rem; bottom: 1rem; } .cookie-btns { width: 100%; } .cookie-btn-accept, .cookie-btn-necessary { flex: 1; text-align: center; } }
+
         @media (max-width: 768px) {
             .page-content { padding: 6rem 1.5rem 3.5rem; }
         }
@@ -180,12 +191,32 @@
         <p>&#169; 2026 Media Metrics. Glasgow, UK. &nbsp;&bull;&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
     </footer>
 
+    <div id="cookie-banner" style="display:none;" role="dialog" aria-label="Cookie consent">
+        <p>We use cookies to improve your experience and analyse site traffic. <a href="/privacy.html">Privacy Policy</a></p>
+        <div class="cookie-btns">
+            <button class="cookie-btn-necessary" id="cookie-necessary">Necessary only</button>
+            <button class="cookie-btn-accept" id="cookie-accept">Accept all</button>
+        </div>
+    </div>
+
     <script>
         var navEl = document.getElementById("nav");
         window.addEventListener("scroll", function() {
             if (window.scrollY > 60) { navEl.classList.add("scrolled"); }
             else { navEl.classList.remove("scrolled"); }
         });
+
+        function loadAnalytics() {}
+        function setCookieChoice(choice) {
+            localStorage.setItem("cookie_consent", choice);
+            document.getElementById("cookie-banner").style.display = "none";
+            if (choice === "all") { loadAnalytics(); }
+        }
+        var consent = localStorage.getItem("cookie_consent");
+        if (!consent) { document.getElementById("cookie-banner").style.display = "flex"; }
+        else if (consent === "all") { loadAnalytics(); }
+        document.getElementById("cookie-accept").addEventListener("click", function() { setCookieChoice("all"); });
+        document.getElementById("cookie-necessary").addEventListener("click", function() { setCookieChoice("necessary"); });
     </script>
 </body>
 </html>
