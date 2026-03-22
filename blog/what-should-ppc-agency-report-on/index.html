@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Should a PPC Agency Actually Report On? | Media Metrics</title>
+    <meta name="description" content="If your agency's monthly report is full of impressions and click-through rates but can't tell you what a lead costs, you've got a reporting problem. Here's what a useful report covers.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Media Metrics">
+    <link rel="canonical" href="https://mediametrics.co.uk/blog/what-should-ppc-agency-report-on/" />
+    <meta property="og:title" content="What Should a PPC Agency Actually Report On? | Media Metrics" />
+    <meta property="og:description" content="If your agency's monthly report is full of impressions and click-through rates but can't tell you what a lead costs, you've got a reporting problem. Here's what a useful report covers." />
+    <meta property="og:url" content="https://mediametrics.co.uk/blog/what-should-ppc-agency-report-on/" />
+    <meta property="og:type" content="article" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root { --bg-primary: #0a0a0f; --bg-elevated: #0f0f16; --bg-card: #13131c; --text-primary: #f0f0f0; --text-secondary: #888899; --accent: #3ecf8e; --border: rgba(255,255,255,0.07); --font-serif: 'PT Serif', Georgia, serif; --font-sans: 'PT Sans', Arial, sans-serif; }
+        html { font-size: 16px; }
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: padding 0.3s ease; }
+        nav.scrolled { padding: 0.75rem 2rem; }
+        .nav-logo { display: flex; align-items: center; position: relative; height: 48px; }
+        .logo-full { height: 32px; width: auto; opacity: 1; transition: opacity 0.3s ease; position: absolute; left: 0; }
+        .logo-icon { height: 32px; width: auto; opacity: 0; transition: opacity 0.3s ease; }
+        nav.scrolled .logo-full { opacity: 0; pointer-events: none; }
+        nav.scrolled .logo-icon { opacity: 1; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: var(--text-primary); }
+        .nav-cta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; padding: 0.5rem 1.25rem; border: 1px solid rgba(62,207,142,0.3); border-radius: 2px; transition: all 0.3s ease; }
+        .nav-cta:hover { background: var(--accent); color: var(--bg-primary); }
+        .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 1px; transition: all 0.3s ease; }
+        main { flex: 1; padding-top: 7rem; padding-bottom: 5rem; }
+        .container { max-width: 740px; margin: 0 auto; padding: 0 2rem; }
+        .post-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.3s ease; }
+        .post-back:hover { color: var(--accent); }
+        .post-back svg { transition: transform 0.2s ease; }
+        .post-back:hover svg { transform: translateX(-3px); }
+        .post-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+        .post-title { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.25; color: var(--text-primary); margin-bottom: 1.5rem; }
+        .post-intro { font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.5rem; }
+        .post-meta { display: flex; align-items: center; gap: 1.25rem; font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+        .post-meta span { display: flex; align-items: center; gap: 0.4rem; }
+        .post-body h2 { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; color: var(--text-primary); margin: 2.5rem 0 1rem; line-height: 1.35; }
+        .post-body h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 700; color: var(--text-primary); margin: 1.75rem 0 0.6rem; letter-spacing: 0.02em; }
+        .post-body p { font-size: 1rem; line-height: 1.85; color: #ccccd8; margin-bottom: 1.4rem; }
+        .post-body ul { margin: 0 0 1.4rem 0; padding: 0; list-style: none; }
+        .post-body ul li { font-size: 1rem; line-height: 1.8; color: #ccccd8; padding: 0.4rem 0 0.4rem 1.5rem; position: relative; }
+        .post-body ul li::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+        .post-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(62,207,142,0.25); transition: border-color 0.2s ease; }
+        .post-body a:hover { border-color: var(--accent); }
+        .pull-quote { margin: 2.5rem 0; padding: 1.75rem 2rem; border-left: 3px solid var(--accent); background: var(--bg-card); border-radius: 0 3px 3px 0; }
+        .pull-quote p { font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; color: var(--text-primary); line-height: 1.65; margin: 0; }
+        .checklist { margin: 1.5rem 0 2rem; padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; }
+        .checklist h3 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+        .checklist ul { margin: 0; }
+        .checklist ul li { font-size: 0.92rem; color: #ccccd8; padding: 0.4rem 0 0.4rem 1.5rem; }
+        .post-cta { margin-top: 3.5rem; padding: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; }
+        .post-cta h3 { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .post-cta p { font-size: 0.95rem; line-height: 1.7; color: #ccccd8; margin-bottom: 1.5rem; }
+        .post-cta-actions { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+        .btn-primary { display: inline-block; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bg-primary); background: var(--accent); padding: 0.75rem 1.75rem; border-radius: 2px; text-decoration: none; transition: opacity 0.2s ease; }
+        .btn-primary:hover { opacity: 0.85; }
+        .post-body .btn-primary { color: var(--bg-primary); border-bottom: none; }
+        .post-body .btn-primary:hover { color: var(--bg-primary); border-bottom: none; }
+        .post-cta-email { font-size: 0.9rem; color: var(--text-secondary); }
+        .post-cta-email a { color: var(--text-secondary); border-bottom: 1px solid rgba(136,136,153,0.3); }
+        .post-footer-rule { margin: 3.5rem 0 2rem; border: none; border-top: 1px solid var(--border); }
+        .post-footer-byline { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+        footer { background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+        .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; border-bottom: none; }
+        .footer-links a:hover { color: var(--accent); }
+        footer p { font-size: 0.8rem; color: var(--text-secondary); }
+        #cookie-banner { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 999; width: calc(100% - 3rem); max-width: 720px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
+        #cookie-banner p { font-size: 0.85rem; line-height: 1.6; color: var(--text-secondary); margin: 0; }
+        #cookie-banner a { color: var(--accent); text-decoration: none; }
+        .cookie-btns { display: flex; gap: 0.75rem; flex-shrink: 0; }
+        .cookie-btn-accept, .cookie-btn-necessary { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.5rem 1rem; border-radius: 2px; cursor: pointer; border: none; transition: all 0.2s ease; }
+        .cookie-btn-accept { background: var(--accent); color: var(--bg-primary); }
+        .cookie-btn-necessary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+        .cookie-btn-necessary:hover { color: var(--text-primary); }
+        @media (max-width: 640px) {
+            .nav-link, .nav-cta { display: none; }
+            .nav-hamburger { display: flex; }
+            nav.menu-open .nav-right { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; background: rgba(10,10,15,0.98); backdrop-filter: blur(20px); padding: 1.5rem 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); }
+            nav.menu-open .nav-link, nav.menu-open .nav-cta { display: block; }
+            nav.menu-open .nav-hamburger { display: flex; }
+            nav.menu-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            nav.menu-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+            nav.menu-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .post-meta { flex-wrap: wrap; gap: 0.75rem; }
+            .post-cta-actions { flex-direction: column; align-items: flex-start; }
+            #cookie-banner { flex-direction: column; align-items: flex-start; gap: 1rem; bottom: 1rem; }
+            .cookie-btns { width: 100%; }
+            .cookie-btn-accept, .cookie-btn-necessary { flex: 1; text-align: center; }
+        }
+        @media (max-width: 480px) { main { padding-top: 5rem; } }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <a href="/" class="nav-logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJQVCBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJQVCBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMiIgZmlsbD0iIzFhMWExYSIvPgogIDxyZWN0IHg9IjEyIiB5PSIyNyIgd2lkdGg9IjUiIGhlaWdodD0iMjIiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8cmVjdCB4PSIyMSIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjM0IiByeD0iMi41IiBmaWxsPSIjMjJjNTVlIi8+CiAgPHJlY3QgeD0iMzAiIHk9IjIzIiB3aWR0aD0iNSIgaGVpZ2h0PSIyNiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjM5IiB5PSIxMSIgd2lkdGg9IjUiIGhlaWdodD0iMzgiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTkiIHdpZHRoPSI1IiBoZWlnaHQ9IjMwIiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+Cjwvc3ZnPgo=" class="logo-icon" alt="Media Metrics">
+        </a>
+        <div class="nav-right">
+            <a href="/blog/" class="nav-link active">Insights</a>
+            <a href="/about/" class="nav-link">About</a>
+            <a href="/#contact" class="nav-cta">Get in touch</a>
+            <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <a href="/blog/" class="post-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                All posts
+            </a>
+
+            <p class="post-label">Agency & Reporting</p>
+            <h1 class="post-title">What Should a PPC Agency Actually Report On?</h1>
+            <p class="post-intro">If your agency's monthly report is full of impressions and click-through rates but can't tell you what a lead costs or where your pipeline is coming from, you've got a reporting problem.</p>
+            <div class="post-meta">
+                <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 min read</span>
+                <span>Media Metrics</span>
+                <span>March 2026</span>
+            </div>
+
+            <div class="post-body">
+                <h2>The report you're probably getting</h2>
+                <p>Most PPC agency reports follow the same template. A few graphs showing impressions going up. A table of click-through rates broken down by campaign. Maybe some quality score numbers. A line about "optimisations made this month" with no detail on what actually changed.</p>
+                <p>It looks professional. It's full of numbers. And it tells you almost nothing about whether your money is working.</p>
+                <p>The problem isn't that these metrics don't matter — they do, in the right context. The problem is that they're platform metrics, not business metrics. They tell you what happened inside Google Ads. They don't tell you what happened to your pipeline.</p>
+
+                <h2>What a useful report actually covers</h2>
+                <p>A report worth reading answers three questions: how much did we spend, what did we get for it, and what are we doing next? Everything else is context.</p>
+
+                <h3>Cost per lead by channel and campaign</h3>
+                <p>This is the single most important number in any PPC report. Not cost per click. Not conversion rate in isolation. How much did it cost to generate a lead that your sales team can actually work?</p>
+                <p>If your agency can't tell you this, they either don't have the tracking set up properly or they don't want you to see the number. Neither is acceptable.</p>
+
+                <h3>Lead quality breakdown</h3>
+                <p>Not all leads are equal. A demo request from a VP of Engineering at a mid-market SaaS company is worth more than a whitepaper download from a student. Your report should break down leads by type and, ideally, by quality — which ones turned into sales conversations, which ones went nowhere.</p>
+                <p>This requires CRM integration, which is where most agencies fall down. If your agency doesn't have visibility into what happens after the form fill, they're optimising blind.</p>
+
+                <h3>Pipeline and revenue attribution</h3>
+                <p>The gold standard: how much pipeline did paid media generate this month? How much closed revenue can be attributed back to ad spend? This isn't always possible to report precisely — attribution is messy and multi-touch — but a good agency will at least show you the trend and be honest about the gaps.</p>
+
+                <h3>Spend vs budget pacing</h3>
+                <p>Simple but often missing. How much did we plan to spend? How much did we actually spend? Are we on track for the month, quarter, and year? If spend is significantly under or over plan, why?</p>
+
+                <h3>Search term and audience insights</h3>
+                <p>What are people actually searching for when they find your ads? Which audience segments are converting and which aren't? This is where the strategic value lives — it tells you what your market is thinking, not just what your ads are doing.</p>
+
+                <h3>What changed and why</h3>
+                <p>Every report should include a plain-English summary of what the agency changed this month and what impact those changes had. New keywords added. Underperforming campaigns paused. Budget shifted from display to search. If they can't articulate what they did and why, question what you're paying for.</p>
+
+                <h3>What's planned for next month</h3>
+                <p>A backward-looking report is a history lesson. You need to know what's coming: tests being run, new campaigns being launched, budget recommendations, seasonal adjustments. This is what separates a reactive agency from a strategic partner.</p>
+
+                <h2>Red flags in agency reporting</h2>
+
+                <div class="pull-quote">
+                    <p>Good PPC reporting isn't about more data. It's about the right data, connected to commercial outcomes, delivered with context and a point of view.</p>
+                </div>
+
+                <p>Watch out for reports that lean heavily on vanity metrics — impressions, reach, ad frequency — without connecting them to outcomes. Be wary of agencies that celebrate click-through rate improvements without mentioning that lead volume dropped. And be especially cautious if your agency resists giving you direct access to ad accounts. The data is yours. You should be able to see it.</p>
+
+                <h2>What to ask your agency</h2>
+                <p>If you're not getting the reporting you need, start with these questions:</p>
+
+                <div class="checklist">
+                    <h3>Questions worth asking</h3>
+                    <ul>
+                        <li>Can you show me cost per lead by campaign for the last three months?</li>
+                        <li>Do you have visibility into which leads converted to pipeline?</li>
+                        <li>What was our blended cost per opportunity this quarter?</li>
+                        <li>What percentage of our spend went to campaigns that generated zero leads?</li>
+                    </ul>
+                </div>
+
+                <p>If they can't answer these, it's not a reporting gap — it's a capability gap.</p>
+
+                <h2>The bottom line</h2>
+                <p>Good PPC reporting isn't about more data. It's about the right data, connected to commercial outcomes, delivered with context and a point of view. If your monthly report doesn't help you make better decisions about where to invest next, it's not a report — it's a screensaver.</p>
+
+                <div class="post-cta">
+                    <h3>Is your current reporting cutting it?</h3>
+                    <p>Media Metrics helps B2B companies get more from their paid media. Our <a href="/#pricing">Performance Audit</a> includes a full review of your tracking, attribution setup, and reporting — and tells you exactly what needs to change.</p>
+                    <div class="post-cta-actions">
+                        <a href="/#contact" class="btn-primary" data-tally-open="vG2o28" data-tally-layout="modal" data-tally-width="411" data-tally-emoji-animation="none">Book a free consultation</a>
+                        <span class="post-cta-email">or email <a href="mailto:hello@mediametrics.co.uk">hello@mediametrics.co.uk</a></span>
+                    </div>
+                </div>
+
+                <hr class="post-footer-rule">
+                <p class="post-footer-byline">Media Metrics is a B2B paid media consultancy based in Glasgow. We help B2B companies turn ad spend into measurable pipeline across Google Ads, Microsoft Ads, LinkedIn, and programmatic channels.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="/about/">About</a>
+                <a href="/blog/">Insights</a>
+                <a href="/privacy.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Media Metrics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" style="display:none;" role="dialog" aria-label="Cookie consent">
+        <p>We use cookies to improve your experience and analyse site traffic. <a href="/privacy.html">Privacy policy</a>.</p>
+        <div class="cookie-btns">
+            <button class="cookie-btn-necessary" id="cookie-necessary">Necessary only</button>
+            <button class="cookie-btn-accept" id="cookie-accept">Accept all</button>
+        </div>
+    </div>
+
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        var navEl = document.getElementById('nav');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 60) { navEl.classList.add('scrolled'); }
+            else { navEl.classList.remove('scrolled'); }
+        });
+        function loadAnalytics() {}
+        function setCookieChoice(choice) {
+            localStorage.setItem("cookie_consent", choice);
+            document.getElementById("cookie-banner").style.display = "none";
+            if (choice === "all") { loadAnalytics(); }
+        }
+        var consent = localStorage.getItem("cookie_consent");
+        if (!consent) { document.getElementById("cookie-banner").style.display = "flex"; }
+        else if (consent === "all") { loadAnalytics(); }
+        document.getElementById("cookie-accept").addEventListener("click", function() { setCookieChoice("all"); });
+        document.getElementById("cookie-necessary").addEventListener("click", function() { setCookieChoice("necessary"); });
+        var hamburger = document.getElementById('navHamburger');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() { navEl.classList.toggle('menu-open'); });
+            document.querySelectorAll('.nav-link, .nav-cta').forEach(function(l) {
+                l.addEventListener('click', function() { navEl.classList.remove('menu-open'); });
+            });
+        }
+    </script>
+</body>
+</html>
