@@ -99,7 +99,7 @@
         .cta-section::before { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); pointer-events: none; }
         .cta-section .section-title { max-width: 600px; margin: 0 auto 1.25rem; }
         .cta-section .section-lead { max-width: 520px; margin: 0 auto 1.75rem; }
-        .cta-btn { display: inline-block; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bg-primary); background: var(--accent); text-decoration: none; padding: 1rem 2.5rem; border-radius: 2px; transition: all 0.3s ease; margin-bottom: 1.5rem; }
+        .cta-btn { display: inline-block; font-family: var(--sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--bg-primary); background: var(--accent); text-decoration: none; padding: 1rem 2.5rem; border-radius: 2px; border: none; cursor: pointer; transition: all 0.3s ease; margin-bottom: 1.5rem; }
         .cta-btn:hover { background: #2db77a; transform: translateY(-1px); box-shadow: 0 8px 30px rgba(62,207,142,0.2); }
         .cta-email { display: block; font-size: 0.85rem; color: var(--text-muted); }
         .cta-email a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(62,207,142,0.3); transition: border-color 0.3s; }
@@ -283,7 +283,7 @@
             <p class="section-label">Get started</p>
             <h2 class="section-title">Let&#8217;s make your ad spend work harder.</h2>
             <p class="section-lead">No pitch decks. No pressure. Just an honest conversation about what&#8217;s possible.</p>
-            <a href="mailto:hello@mediametrics.co.uk" class="cta-btn">Book a free consultation</a>
+            <button class="cta-btn" data-tally-open="vG2o28" data-tally-layout="modal" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Book a free consultation</button>
             <p class="cta-email">or email us at <a href="mailto:hello@mediametrics.co.uk">hello@mediametrics.co.uk</a></p>
         </div>
     </section>
@@ -292,6 +292,7 @@
         <p>&#169; 2026 Media Metrics. London, UK.</p>
     </footer>
 
+    <script async src="https://tally.so/widgets/embed.js"></script>
     <script>
         var navEl = document.getElementById("nav");
         window.addEventListener("scroll", function() {
