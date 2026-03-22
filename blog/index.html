@@ -43,7 +43,7 @@
 
         main { flex: 1; padding-top: 7rem; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem 5rem; }
-        .page-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+        .page-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; background: linear-gradient(90deg, #3ecf8e 0%, #3b82f6 50%, #3ecf8e 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientFlow 4s linear infinite; }
         h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; color: var(--text-primary); margin-bottom: 0.75rem; }
         .page-sub { font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); max-width: 560px; }
 
@@ -55,7 +55,7 @@
         .posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
         .post-card { display: flex; flex-direction: column; padding: 2rem; border: 1px solid var(--border); border-radius: 3px; background: var(--bg-card); text-decoration: none; transition: border-color 0.3s ease; }
         .post-card:hover { border-color: rgba(62,207,142,0.3); }
-        .post-card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+        .post-card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; background: linear-gradient(90deg, #3ecf8e 0%, #3b82f6 50%, #3ecf8e 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientFlow 4s linear infinite; }
         .post-card h2 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; line-height: 1.35; color: var(--text-primary); margin-bottom: 0.75rem; }
         .post-card p { font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); flex: 1; margin-bottom: 1.5rem; }
         .post-card-meta { font-size: 0.78rem; color: var(--text-secondary); display: flex; align-items: center; gap: 1rem; }
@@ -97,7 +97,9 @@
             nav.menu-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
             nav.menu-open .nav-hamburger span:nth-child(2) { opacity: 0; }
             nav.menu-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        }    </style>
+        }
+        @keyframes gradientFlow { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+    </style>
 </head>
 <body>
     <nav id="nav">
