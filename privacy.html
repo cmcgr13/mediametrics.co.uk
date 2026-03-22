@@ -74,7 +74,18 @@
         @media (max-width: 768px) {
             .page-content { padding: 6rem 1.5rem 3.5rem; }
         }
-    </style>
+            .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 1px; transition: all 0.3s ease; }
+        @media (max-width: 640px) {
+            .nav-link, .nav-cta { display: none; }
+            .nav-hamburger { display: flex; }
+            nav.menu-open .nav-right { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; background: rgba(10,10,15,0.98); backdrop-filter: blur(20px); padding: 1.5rem 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); }
+            nav.menu-open .nav-link, nav.menu-open .nav-cta { display: block; }
+            nav.menu-open .nav-hamburger { display: flex; }
+            nav.menu-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            nav.menu-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+            nav.menu-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        }    </style>
 </head>
 <body>
     <nav id="nav">
@@ -86,8 +97,7 @@
             <a href="/blog/" class="nav-link">Insights</a>
             <a href="/about/" class="nav-link">About</a>
             <a href="/#contact" class="nav-cta">Get in touch</a>
-        </div>
-    </nav>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 
     <main class="page-content">
         <p class="page-label">Legal</p>
@@ -217,6 +227,15 @@
         else if (consent === "all") { loadAnalytics(); }
         document.getElementById("cookie-accept").addEventListener("click", function() { setCookieChoice("all"); });
         document.getElementById("cookie-necessary").addEventListener("click", function() { setCookieChoice("necessary"); });
+
+        var hamburger = document.getElementById('navHamburger');
+        if (hamburger) {
+            var navMenu = document.getElementById('nav') || document.querySelector('nav');
+            hamburger.addEventListener('click', function() { navMenu.classList.toggle('menu-open'); });
+            document.querySelectorAll('.nav-link, .nav-cta').forEach(function(l) {
+                l.addEventListener('click', function() { navMenu.classList.remove('menu-open'); });
+            });
+        }
     </script>
 </body>
 </html>
