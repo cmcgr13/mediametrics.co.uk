@@ -25,6 +25,9 @@
         nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
         .nav-logo { display: flex; align-items: center; height: 48px; }
         .logo-full { height: 42px; width: auto; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-link { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--text-primary); }
         .nav-cta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; padding: 0.5rem 1.25rem; border: 1px solid rgba(62,207,142,0.3); border-radius: 2px; transition: all 0.3s ease; }
         .nav-cta:hover { background: var(--accent); color: var(--bg-primary); }
 
@@ -49,7 +52,10 @@
         <div class="nav-logo">
             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
         </div>
-        <a href="/" class="nav-cta">Back to home</a>
+        <div class="nav-right">
+            <a href="/blog/" class="nav-link">Insights</a>
+            <a href="/" class="nav-cta">Back to home</a>
+        </div>
     </nav>
 
     <main>
