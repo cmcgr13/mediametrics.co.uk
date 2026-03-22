@@ -20,9 +20,9 @@
             --text-secondary: #9a9890;
             --text-muted: #5c5a55;
             --accent: #3ecf8e;
-            --accent-dim: rgba(200, 164, 110, 0.12);
-            --accent-glow: rgba(200, 164, 110, 0.06);
-            --border: rgba(200, 164, 110, 0.08);
+            --accent-dim: rgba(62, 207, 142, 0.12);
+            --accent-glow: rgba(62, 207, 142, 0.06);
+            --border: rgba(62, 207, 142, 0.08);
             --serif: 'Instrument Serif', Georgia, serif;
             --sans: 'DM Sans', -apple-system, sans-serif;
         }
@@ -75,7 +75,7 @@
             color: var(--accent);
             text-decoration: none;
             padding: 0.5rem 1.25rem;
-            border: 1px solid rgba(200, 164, 110, 0.3);
+            border: 1px solid rgba(62, 207, 142, 0.3);
             border-radius: 2px;
             transition: all 0.3s ease;
         }
@@ -174,7 +174,7 @@
         .hero-cta:hover {
             background: #2db77a;
             transform: translateY(-1px);
-            box-shadow: 0 8px 30px rgba(200, 164, 110, 0.2);
+            box-shadow: 0 8px 30px rgba(62, 207, 142, 0.2);
         }
 
         /* ===== DIVIDER ===== */
@@ -203,7 +203,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .problem-item:hover { border-color: rgba(200, 164, 110, 0.2); }
+        .problem-item:hover { border-color: rgba(62, 207, 142, 0.2); }
 
         .problem-item p {
             font-size: 0.95rem;
@@ -282,7 +282,7 @@
         }
 
         .service-card:hover {
-            border-color: rgba(200, 164, 110, 0.2);
+            border-color: rgba(62, 207, 142, 0.2);
             transform: translateY(-2px);
         }
 
@@ -367,6 +367,114 @@
             font-size: 0.95rem !important;
         }
 
+        /* ===== PRICING ===== */
+        .pricing { background: var(--bg-elevated); }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            padding: 2.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(62, 207, 142, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(62, 207, 142, 0.25);
+            background: linear-gradient(180deg, rgba(62, 207, 142, 0.04) 0%, var(--bg-card) 100%);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--bg-primary);
+            background: var(--accent);
+            padding: 0.25rem 0.6rem;
+            border-radius: 2px;
+            margin-bottom: 1.25rem;
+            width: fit-content;
+        }
+
+        .pricing-card h3 {
+            font-family: var(--serif);
+            font-weight: 400;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-price {
+            font-family: var(--sans);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-unit {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-desc {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .pricing-includes {
+            list-style: none;
+            padding: 0;
+            border-top: 1px solid var(--border);
+            padding-top: 1.25rem;
+        }
+
+        .pricing-includes li {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            padding: 0.3rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .pricing-includes li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .pricing-footer {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .pricing-footer p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
         /* ===== CTA ===== */
         .cta-section {
             text-align: center;
@@ -414,7 +522,7 @@
         .cta-btn:hover {
             background: #2db77a;
             transform: translateY(-1px);
-            box-shadow: 0 8px 30px rgba(200, 164, 110, 0.2);
+            box-shadow: 0 8px 30px rgba(62, 207, 142, 0.2);
         }
 
         .cta-email {
@@ -426,7 +534,7 @@
         .cta-email a {
             color: var(--accent);
             text-decoration: none;
-            border-bottom: 1px solid rgba(200, 164, 110, 0.3);
+            border-bottom: 1px solid rgba(62, 207, 142, 0.3);
             transition: border-color 0.3s;
         }
 
@@ -476,6 +584,10 @@
 
             .problem-grid,
             .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -635,8 +747,75 @@
             <p class="section-label">Who we work with</p>
             <h2 class="section-title">Built for B2B</h2>
             <div class="fit-content">
-                <p>We work best with companies that have a considered purchase cycle &mdash; typically SaaS, technology, professional services, or complex industrial products. Our sweet spot is businesses spending &pound;5k&ndash;50k per month on paid media that want better returns without building a full in-house team.</p>
+                <p>We work best with companies that have a considered purchase cycle &mdash; typically SaaS, technology, professional services, or complex industrial products. Our sweet spot is businesses spending &pound;10k&ndash;50k per month on paid media that want better returns without building a full in-house team.</p>
                 <p class="fit-note">If you&rsquo;re a B2C brand, an e-commerce shop, or looking for someone to &ldquo;run some ads&rdquo; without caring about downstream metrics &mdash; we&rsquo;re probably not the right fit. And that&rsquo;s fine.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container reveal">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-title">Transparent pricing. No surprises.</h2>
+            <p class="section-lead">Every engagement is scoped to your needs, but here&rsquo;s where most clients land.</p>
+
+            <div class="pricing-grid">
+
+                <!-- Audit -->
+                <div class="pricing-card">
+                    <h3>Performance Audit</h3>
+                    <div class="pricing-price">From &pound;750</div>
+                    <div class="pricing-unit">One-off engagement</div>
+                    <p class="pricing-desc">A thorough diagnostic of your paid media setup &mdash; the fastest way to find out where money is being wasted and where the quick wins are.</p>
+                    <ul class="pricing-includes">
+                        <li>Account structure &amp; campaign review</li>
+                        <li>Tracking &amp; attribution audit</li>
+                        <li>CRM integration assessment</li>
+                        <li>Prioritised recommendations report</li>
+                        <li>60-minute walkthrough call</li>
+                    </ul>
+                </div>
+
+                <!-- Retainer -->
+                <div class="pricing-card featured">
+                    <h3>Managed Retainer</h3>
+                    <div class="pricing-price">From &pound;1,500/mo</div>
+                    <div class="pricing-unit">Minimum 3-month engagement</div>
+                    <p class="pricing-desc">Hands-on campaign management and optimisation across your paid channels, with reporting tied to pipeline &mdash; not vanity metrics.</p>
+                    <ul class="pricing-includes">
+                        <li>Google, Microsoft &amp; LinkedIn Ads management</li>
+                        <li>Keyword strategy &amp; bid optimisation</li>
+                        <li>Ad copy creation &amp; testing</li>
+                        <li>Monthly performance reporting</li>
+                        <li>Fortnightly strategy calls</li>
+                        <li>Tracking &amp; attribution maintenance</li>
+                    </ul>
+                    <div class="pricing-badge" style="margin-top: 1.25rem; margin-bottom: 0;">Most popular</div>
+                </div>
+
+                <!-- Strategic -->
+                <div class="pricing-card">
+                    <h3>Strategic Advisory</h3>
+                    <div class="pricing-price">From &pound;3,000/mo</div>
+                    <div class="pricing-unit">Fractional &bull; 1&ndash;2 days per week</div>
+                    <p class="pricing-desc">Senior-level performance marketing thinking embedded in your team &mdash; for companies that need strategic leadership without a permanent hire.</p>
+                    <ul class="pricing-includes">
+                        <li>Paid media &amp; demand gen strategy</li>
+                        <li>ABM programme design</li>
+                        <li>Agency oversight &amp; management</li>
+                        <li>Team coaching &amp; upskilling</li>
+                        <li>Marketing &amp; sales alignment</li>
+                        <li>Board-ready reporting</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pricing-footer">
+                <p>All pricing excludes VAT. Engagements are scoped after an initial conversation &mdash; no commitment required to chat.</p>
             </div>
         </div>
     </section>
