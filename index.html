@@ -97,8 +97,8 @@
         .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2rem; }
         .pricing-card { padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; display: flex; flex-direction: column; transition: all 0.3s ease; }
         .pricing-card:hover { border-color: transparent; background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box, linear-gradient(135deg, #3ecf8e 0%, #3b82f6 100%) border-box; transform: translateY(-6px); box-shadow: 0 0 18px rgba(62,207,142,0.45), 0 0 50px rgba(59,130,246,0.2), 0 16px 40px rgba(0,0,0,0.4); }
-        .pricing-card.featured { border-color: transparent; background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box, linear-gradient(135deg, #3ecf8e 0%, #3b82f6 100%) border-box; box-shadow: 0 0 28px rgba(62,207,142,0.2), 0 0 60px rgba(59,130,246,0.1); }
-        .pricing-badge { display: block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; background: linear-gradient(90deg, #3ecf8e, #3b82f6); padding: 0.3rem 0.9rem; border-radius: 20px; width: fit-content; margin: 0 auto 1.75rem; }
+        .pricing-card.featured { position: relative; border-color: transparent; background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box, linear-gradient(135deg, #3ecf8e 0%, #3b82f6 100%) border-box; box-shadow: 0 0 28px rgba(62,207,142,0.2), 0 0 60px rgba(59,130,246,0.1); padding: 2.25rem 2rem; }
+        .pricing-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; background: linear-gradient(90deg, #3ecf8e, #3b82f6); padding: 0.3rem 0.9rem; border-radius: 20px; }
         .pricing-icon { width: 46px; height: 46px; border-radius: 10px; background: var(--accent-dim); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
         .pricing-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.75rem; }
         .pricing-price { font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem; }
@@ -148,7 +148,9 @@
         @media (max-width: 768px) {
             section { padding: 3rem 1.5rem; }
             .problem-grid, .services-grid { grid-template-columns: 1fr; }
-            .services-grid .service-card { grid-column: 1 / -1; }
+            .services-grid .service-card,
+            .services-grid .service-card:nth-child(4),
+            .services-grid .service-card:nth-child(5) { grid-column: 1 / -1; }
             .pricing-grid { grid-template-columns: 1fr 1fr; }
             .pricing-card:nth-child(1), .pricing-card:nth-child(2) { } /* natural 2-col at tablet */
             .step { grid-template-columns: 50px 1fr; gap: 1.25rem; }
