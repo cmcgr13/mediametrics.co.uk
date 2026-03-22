@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -101,13 +101,27 @@
             nav.menu-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
         }
         @keyframes gradientFlow { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        @keyframes barRise { 0% { transform: scaleY(1); } 35% { transform: scaleY(0.2); } 70% { transform: scaleY(1.15); } 100% { transform: scaleY(1); } }
+        .lbar { transform-box: fill-box; transform-origin: 50% 100%; }
+        nav.scrolled #lbar1 { animation: barRise 0.5s ease 0s both; }
+        nav.scrolled #lbar2 { animation: barRise 0.5s ease 0.07s both; }
+        nav.scrolled #lbar3 { animation: barRise 0.5s ease 0.14s both; }
+        nav.scrolled #lbar4 { animation: barRise 0.5s ease 0.21s both; }
+        nav.scrolled #lbar5 { animation: barRise 0.5s ease 0.28s both; }
     </style>
 </head>
 <body>
     <nav id="nav">
         <a href="/" class="nav-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMiIgZmlsbD0iIzFhMWExYSIvPgogIDxyZWN0IHg9IjEyIiB5PSIyNyIgd2lkdGg9IjUiIGhlaWdodD0iMjIiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8cmVjdCB4PSIyMSIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjM0IiByeD0iMi41IiBmaWxsPSIjMjJjNTVlIi8+CiAgPHJlY3QgeD0iMzAiIHk9IjIzIiB3aWR0aD0iNSIgaGVpZ2h0PSIyNiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjM5IiB5PSIxMSIgd2lkdGg9IjUiIGhlaWdodD0iMzgiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTkiIHdpZHRoPSI1IiBoZWlnaHQ9IjMwIiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+Cjwvc3ZnPgo=" class="logo-icon" alt="Media Metrics">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMzZWNmOGUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzNiODJmNiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
+            <svg class="logo-icon" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="32" fill="#1a1a1a"/>
+            <rect class="lbar" id="lbar1" x="12" y="27" width="5" height="22" rx="2.5" fill="#ffffff"/>
+            <rect class="lbar" id="lbar2" x="21" y="15" width="5" height="34" rx="2.5" fill="#3ecf8e"/>
+            <rect class="lbar" id="lbar3" x="30" y="23" width="5" height="26" rx="2.5" fill="#ffffff"/>
+            <rect class="lbar" id="lbar4" x="39" y="11" width="5" height="38" rx="2.5" fill="#3b82f6"/>
+            <rect class="lbar" id="lbar5" x="48" y="19" width="5" height="30" rx="2.5" fill="#ffffff"/>
+        </svg>
         </a>
         <div class="nav-right">
             <a href="/blog/" class="nav-link">Insights</a>

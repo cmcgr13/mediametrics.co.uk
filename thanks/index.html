@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,12 +56,19 @@
             nav.menu-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
             nav.menu-open .nav-hamburger span:nth-child(2) { opacity: 0; }
             nav.menu-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-        }    </style>
+        }        @keyframes barRise { 0% { transform: scaleY(1); } 35% { transform: scaleY(0.2); } 70% { transform: scaleY(1.15); } 100% { transform: scaleY(1); } }
+        .lbar { transform-box: fill-box; transform-origin: 50% 100%; }
+        nav.scrolled #lbar1 { animation: barRise 0.5s ease 0s both; }
+        nav.scrolled #lbar2 { animation: barRise 0.5s ease 0.07s both; }
+        nav.scrolled #lbar3 { animation: barRise 0.5s ease 0.14s both; }
+        nav.scrolled #lbar4 { animation: barRise 0.5s ease 0.21s both; }
+        nav.scrolled #lbar5 { animation: barRise 0.5s ease 0.28s both; }
+    </style>
 </head>
 <body>
     <nav>
         <div class="nav-logo">
-            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMzZWNmOGUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzNiODJmNiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
         </div>
         <div class="nav-right">
             <a href="/blog/" class="nav-link">Insights</a>
