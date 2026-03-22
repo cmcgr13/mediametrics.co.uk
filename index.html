@@ -57,8 +57,8 @@
         .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); max-width: 1000px; margin: 0 auto; }
         .problem { background: var(--bg-elevated); }
         .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
-        .problem-item { padding: 1.75rem; border: 1px solid var(--border); border-radius: 3px; background: var(--bg-card); transition: border-color 0.3s ease; }
-        .problem-item:hover { border-color: rgba(62,207,142,0.2); }
+        .problem-item { padding: 1.75rem; border: 1px solid var(--border); border-radius: 3px; background: var(--bg-card); transition: all 0.3s ease; }
+        .problem-item:hover { border-color: rgba(62,207,142,0.25); transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
         .problem-item svg { display: block; margin-bottom: 1rem; flex-shrink: 0; }
         .problem-item p { font-size: 0.95rem; line-height: 1.7; }
 
@@ -72,10 +72,12 @@
         .about-highlight p { font-family: var(--serif); font-size: 1.2rem; line-height: 1.7; color: var(--text-primary); font-style: italic; }
 
         .services { background: var(--bg-elevated); }
-        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
-        .service-card { padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; transition: all 0.3s ease; }
-        .service-card:hover { border-color: rgba(62,207,142,0.2); transform: translateY(-2px); }
-        .service-num { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem; margin-top: 2rem; }
+        .service-card { grid-column: span 2; padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; transition: all 0.3s ease; }
+        .service-card:nth-child(4) { grid-column: 2 / 4; }
+        .service-card:nth-child(5) { grid-column: 4 / 6; }
+        .service-card:hover { border-color: rgba(62,207,142,0.25); transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+        .service-icon { display: block; margin-bottom: 1.25rem; }
         .service-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; }
         .service-card p { font-size: 0.92rem; line-height: 1.75; }
 
@@ -92,9 +94,9 @@
         .fit-note { margin-top: 1.5rem; font-style: italic; color: var(--text-muted); font-size: 0.95rem !important; }
 
         .pricing { background: var(--bg-elevated); }
-        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
         .pricing-card { padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; display: flex; flex-direction: column; transition: all 0.3s ease; }
-        .pricing-card:hover { border-color: rgba(62,207,142,0.2); transform: translateY(-2px); }
+        .pricing-card:hover { border-color: rgba(62,207,142,0.25); transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
         .pricing-card.featured { border-color: rgba(62,207,142,0.25); background: linear-gradient(180deg, rgba(62,207,142,0.04) 0%, var(--bg-card) 100%); }
         .pricing-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-primary); background: var(--accent); padding: 0.25rem 0.6rem; border-radius: 2px; width: fit-content; }
         .pricing-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.75rem; }
@@ -144,6 +146,7 @@
         @media (max-width: 768px) {
             section { padding: 3rem 1.5rem; }
             .problem-grid, .services-grid { grid-template-columns: 1fr; }
+            .services-grid .service-card { grid-column: 1 / -1; }
             .pricing-grid { grid-template-columns: 1fr; }
             .step { grid-template-columns: 50px 1fr; gap: 1.25rem; }
             .step-num { font-size: 2rem; }
@@ -153,6 +156,19 @@
             section { padding: 2.5rem 1.25rem; }
             .hero { padding-top: 4rem; }
         }
+
+        /* Staggered card animations */
+        @keyframes cardReveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .services-grid .service-card, .pricing-grid .pricing-card { opacity: 0; }
+        .reveal.visible .service-card:nth-child(1) { animation: cardReveal 0.5s ease 0.1s forwards; }
+        .reveal.visible .service-card:nth-child(2) { animation: cardReveal 0.5s ease 0.2s forwards; }
+        .reveal.visible .service-card:nth-child(3) { animation: cardReveal 0.5s ease 0.3s forwards; }
+        .reveal.visible .service-card:nth-child(4) { animation: cardReveal 0.5s ease 0.4s forwards; }
+        .reveal.visible .service-card:nth-child(5) { animation: cardReveal 0.5s ease 0.5s forwards; }
+        .reveal.visible .pricing-card:nth-child(1) { animation: cardReveal 0.5s ease 0.1s forwards; }
+        .reveal.visible .pricing-card:nth-child(2) { animation: cardReveal 0.5s ease 0.2s forwards; }
+        .reveal.visible .pricing-card:nth-child(3) { animation: cardReveal 0.5s ease 0.3s forwards; }
+        .reveal.visible .pricing-card:nth-child(4) { animation: cardReveal 0.5s ease 0.4s forwards; }
             .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
         .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 1px; transition: all 0.3s ease; }
         @media (max-width: 640px) {
@@ -255,12 +271,33 @@
     <section class="services" id="services">
         <div class="container reveal">
             <p class="section-label">What we do</p>
-            <h2 class="section-title">Four ways we help</h2>
+            <h2 class="section-title">How we help</h2>
             <div class="services-grid">
-                <div class="service-card"><p class="service-num">01</p><h3>Paid Media Management</h3><p>End-to-end management of Google Ads, Microsoft Ads, LinkedIn, and programmatic campaigns. Account structure, keyword strategy, bid management, and ongoing optimisation &mdash; all tied back to your actual pipeline metrics.</p></div>
-                <div class="service-card"><p class="service-num">02</p><h3>B2B Demand Generation</h3><p>Campaign planning, content promotion, ABM programme design, and alignment between marketing and sales on what &#8220;good&#8221; looks like &mdash; from top-of-funnel awareness through to lead nurture and handoff.</p></div>
-                <div class="service-card"><p class="service-num">03</p><h3>Marketing Analytics &amp; Reporting</h3><p>We audit your tracking, fix attribution gaps, and build reporting that connects ad spend to revenue. UTM structures, CRM integration, dashboards that actually get used &mdash; decisions on real numbers.</p></div>
-                <div class="service-card"><p class="service-num">04</p><h3>Strategic Consulting</h3><p>Fractional and advisory engagements for companies that need senior-level performance marketing thinking &mdash; whether setting annual strategy, auditing an agency, or upskilling your team.</p></div>
+                <div class="service-card">
+                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <h3>Google Ads</h3>
+                    <p>Search, Display, and YouTube campaign management built for B2B pipeline. Keyword strategy, match type control, bid management, and conversion tracking &mdash; structured around cost-per-lead, not clicks.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <h3>LinkedIn Ads</h3>
+                    <p>Sponsored content, message ads, and lead gen forms targeted to the buying committee. Account-based targeting, audience segmentation, and creative testing to drive pipeline from the right people.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <h3>Microsoft Ads</h3>
+                    <p>Search and audience campaigns on Bing and the Microsoft Audience Network &mdash; lower CPCs than Google, with strong reach among professional and enterprise audiences. Efficient, and frequently overlooked.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                    <h3>SEO &amp; Content Strategy</h3>
+                    <p>Keyword research, on-page optimisation, and content strategy aligned to your buyers&#8217; search intent. Organic traffic that compounds alongside paid to reduce cost-per-acquisition over time.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <h3>Analytics &amp; Reporting</h3>
+                    <p>Tracking audits, UTM structure, CRM integration, and dashboards that connect ad spend to revenue. We fix attribution before it becomes a political problem between marketing and sales.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -272,7 +309,7 @@
             <p class="section-label">How we work</p>
             <h2 class="section-title">Simple, transparent, outcome-driven</h2>
             <div class="process-steps">
-                <div class="step"><span class="step-num">01</span><div><h3>Diagnose</h3><p>We audit your current setup &mdash; accounts, tracking, attribution, CRM integration &mdash; and identify where money is being wasted or opportunities missed.</p></div></div>
+                <div class="step"><span class="step-num">01</span><div><h3>Diagnose</h3><p>We audit your current setup &mdash; ad accounts, SEO foundations, tracking, attribution, CRM integration &mdash; and identify where money is being wasted or opportunities are being missed.</p></div></div>
                 <div class="step"><span class="step-num">02</span><div><h3>Plan</h3><p>We build a strategy tied to your commercial targets. Not traffic goals. Not impression benchmarks. Pipeline and revenue.</p></div></div>
                 <div class="step"><span class="step-num">03</span><div><h3>Execute</h3><p>We get hands-on in the platforms &mdash; building campaigns, writing copy, managing bids, running tests. You always see what we&#8217;re doing and why.</p></div></div>
                 <div class="step"><span class="step-num">04</span><div><h3>Report</h3><p>Regular, jargon-free reporting that connects spend to outcomes. What&#8217;s working, what isn&#8217;t, and what we&#8217;re doing about it.</p></div></div>
@@ -341,6 +378,20 @@
                         <li>Team coaching &amp; upskilling</li>
                         <li>Marketing &amp; sales alignment</li>
                         <li>Board-ready reporting</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>SEO &amp; Content</h3>
+                    <div class="pricing-price">From &#163;1,000/mo</div>
+                    <div class="pricing-unit">Minimum 6-month engagement</div>
+                    <p class="pricing-desc">Organic search and content strategy to build long-term pipeline alongside your paid channels &mdash; keyword research, on-page optimisation, and content aligned to buyer intent.</p>
+                    <ul class="pricing-includes">
+                        <li>Keyword research &amp; gap analysis</li>
+                        <li>On-page SEO optimisation</li>
+                        <li>Content strategy &amp; briefs</li>
+                        <li>Technical SEO recommendations</li>
+                        <li>Monthly organic performance reporting</li>
+                        <li>Paid &amp; organic channel alignment</li>
                     </ul>
                 </div>
             </div>
