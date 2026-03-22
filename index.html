@@ -94,7 +94,7 @@
         .fit-note { margin-top: 1.5rem; font-style: italic; color: var(--text-muted); font-size: 0.95rem !important; }
 
         .pricing { background: var(--bg-elevated); }
-        .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2rem; }
         .pricing-card { padding: 1.75rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 3px; display: flex; flex-direction: column; transition: all 0.3s ease; }
         .pricing-card:hover { border-color: rgba(62,207,142,0.25); transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
         .pricing-card.featured { border-color: rgba(62,207,142,0.25); background: linear-gradient(180deg, rgba(62,207,142,0.04) 0%, var(--bg-card) 100%); }
@@ -147,7 +147,8 @@
             section { padding: 3rem 1.5rem; }
             .problem-grid, .services-grid { grid-template-columns: 1fr; }
             .services-grid .service-card { grid-column: 1 / -1; }
-            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr 1fr; }
+            .pricing-card:nth-child(1), .pricing-card:nth-child(2) { } /* natural 2-col at tablet */
             .step { grid-template-columns: 50px 1fr; gap: 1.25rem; }
             .step-num { font-size: 2rem; }
             nav { padding: 1rem 1.5rem; }
@@ -155,6 +156,7 @@
         @media (max-width: 480px) {
             section { padding: 2.5rem 1.25rem; }
             .hero { padding-top: 4rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
 
         /* Staggered card animations */
