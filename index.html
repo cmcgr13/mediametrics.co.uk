@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Metrics | B2B Performance Marketing Consultancy</title>
+    <meta name="description" content="Media Metrics helps B2B companies turn ad spend into measurable pipeline. Paid media management, demand generation, analytics and strategic consulting. London, UK.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-elevated: #111118;
+            --bg-card: #16161f;
+            --bg-subtle: #1c1c28;
+            --text-primary: #e8e6e1;
+            --text-secondary: #9a9890;
+            --text-muted: #5c5a55;
+            --accent: #c8a46e;
+            --accent-dim: rgba(200, 164, 110, 0.12);
+            --accent-glow: rgba(200, 164, 110, 0.06);
+            --border: rgba(200, 164, 110, 0.08);
+            --serif: 'Instrument Serif', Georgia, serif;
+            --sans: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: padding 0.3s ease;
+        }
+
+        nav.scrolled { padding: 0.75rem 2rem; }
+
+        .nav-logo {
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .nav-logo span { color: var(--accent); }
+
+        .nav-cta {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid rgba(200, 164, 110, 0.3);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 7rem 2rem; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .container--narrow {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-weight: 400;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.15;
+            color: var(--text-primary);
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--bg-primary);
+            background: var(--accent);
+            text-decoration: none;
+            padding: 1rem 2.25rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.8s forwards;
+        }
+
+        .hero-cta:hover {
+            background: #d4b07a;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(200, 164, 110, 0.2);
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ===== PROBLEM ===== */
+        .problem { background: var(--bg-elevated); }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-item {
+            padding: 1.75rem;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            background: var(--bg-card);
+            transition: border-color 0.3s ease;
+        }
+
+        .problem-item:hover { border-color: rgba(200, 164, 110, 0.2); }
+
+        .problem-item p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ===== SECTION HEADINGS ===== */
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-weight: 400;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-lead {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 620px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-text {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .about-highlight {
+            margin-top: 2.5rem;
+            padding: 1.75rem 2rem;
+            border-left: 2px solid var(--accent);
+            background: var(--accent-dim);
+            border-radius: 0 3px 3px 0;
+        }
+
+        .about-highlight p {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        /* ===== SERVICES ===== */
+        .services { background: var(--bg-elevated); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            padding: 2.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(200, 164, 110, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .service-num {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--serif);
+            font-weight: 400;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+        }
+
+        /* ===== PROCESS ===== */
+        .process-steps {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .step:last-child { border-bottom: none; }
+
+        .step-num {
+            font-family: var(--serif);
+            font-size: 2.5rem;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .step h3 {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        /* ===== FIT ===== */
+        .fit { background: var(--bg-elevated); }
+
+        .fit-content {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .fit-content p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .fit-note {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem !important;
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-section .section-title {
+            max-width: 600px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .cta-section .section-lead {
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--bg-primary);
+            background: var(--accent);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn:hover {
+            background: #d4b07a;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(200, 164, 110, 0.2);
+        }
+
+        .cta-email {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .cta-email a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(200, 164, 110, 0.3);
+            transition: border-color 0.3s;
+        }
+
+        .cta-email a:hover { border-color: var(--accent); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 2.5rem 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover { color: var(--accent); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            section { padding: 5rem 1.5rem; }
+
+            .problem-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                grid-template-columns: 50px 1fr;
+                gap: 1.25rem;
+            }
+
+            .step-num { font-size: 2rem; }
+
+            nav { padding: 1rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            section { padding: 4rem 1.25rem; }
+            .hero { padding-top: 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="nav-logo">Media <span>Metrics</span></div>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-label">B2B Performance Marketing</p>
+            <h1>Your paid media should be a <em>growth engine.</em> Not a guessing game.</h1>
+            <p class="hero-sub">We help B2B companies turn ad spend into measurable pipeline &mdash; with the rigour of an in-house team and the agility of a specialist partner.</p>
+            <a href="#contact" class="hero-cta">Let&rsquo;s talk</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROBLEM -->
+    <section class="problem">
+        <div class="container reveal">
+            <p class="section-label">The problem</p>
+            <h2 class="section-title">Sound familiar?</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <p>You&rsquo;re spending on Google, LinkedIn, and display &mdash; but you can&rsquo;t tie it back to revenue.</p>
+                </div>
+                <div class="problem-item">
+                    <p>Your agency sends reports full of impressions and clicks, but nobody can tell you what a lead actually costs.</p>
+                </div>
+                <div class="problem-item">
+                    <p>Marketing and sales are working off different numbers, and attribution is a mess.</p>
+                </div>
+                <div class="problem-item">
+                    <p>You need someone who understands both the platforms and the pipeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="container--narrow reveal">
+            <p class="section-label">Who we are</p>
+            <h2 class="section-title">Performance marketing that speaks your language</h2>
+            <div class="about-text">
+                <p>Media Metrics is a B2B performance marketing consultancy built on a simple premise: ad spend should generate pipeline, not just traffic.</p>
+                <p>We work with SaaS, technology, and complex-sale businesses to plan, execute, and optimise paid media programmes across search, social, and programmatic channels. Every campaign is structured around commercial outcomes &mdash; cost per lead, cost per opportunity, and return on ad spend.</p>
+                <p>Founded by a marketer who&rsquo;s managed multi-product portfolios in-house, we bring the strategic depth of an internal team without the overhead.</p>
+            </div>
+            <div class="about-highlight">
+                <p>No vanity metrics. No black-box reporting. Just clear data and honest recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SERVICES -->
+    <section class="services">
+        <div class="container reveal">
+            <p class="section-label">What we do</p>
+            <h2 class="section-title">Four ways we help</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <p class="service-num">01</p>
+                    <h3>Paid Media Management</h3>
+                    <p>End-to-end management of Google Ads, Microsoft Ads, LinkedIn, and programmatic campaigns. Account structure, keyword strategy, bid management, and ongoing optimisation &mdash; all tied back to your actual pipeline metrics.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-num">02</p>
+                    <h3>B2B Demand Generation</h3>
+                    <p>Campaign planning, content promotion, ABM programme design, and alignment between marketing and sales on what &ldquo;good&rdquo; looks like &mdash; from top-of-funnel awareness through to lead nurture and handoff.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-num">03</p>
+                    <h3>Marketing Analytics &amp; Reporting</h3>
+                    <p>We audit your tracking, fix attribution gaps, and build reporting that connects ad spend to revenue. UTM structures, CRM integration, dashboards that actually get used &mdash; decisions on real numbers.</p>
+                </div>
+                <div class="service-card">
+                    <p class="service-num">04</p>
+                    <h3>Strategic Consulting</h3>
+                    <p>Fractional and advisory engagements for companies that need senior-level performance marketing thinking &mdash; whether setting annual strategy, auditing an agency, or upskilling your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROCESS -->
+    <section class="process">
+        <div class="container reveal">
+            <p class="section-label">How we work</p>
+            <h2 class="section-title">Simple, transparent, outcome-driven</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <div>
+                        <h3>Diagnose</h3>
+                        <p>We audit your current setup &mdash; accounts, tracking, attribution, CRM integration &mdash; and identify where money is being wasted or opportunities missed.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <div>
+                        <h3>Plan</h3>
+                        <p>We build a strategy tied to your commercial targets. Not traffic goals. Not impression benchmarks. Pipeline and revenue.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <div>
+                        <h3>Execute</h3>
+                        <p>We get hands-on in the platforms &mdash; building campaigns, writing copy, managing bids, running tests. You always see what we&rsquo;re doing and why.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-num">04</span>
+                    <div>
+                        <h3>Report</h3>
+                        <p>Regular, jargon-free reporting that connects spend to outcomes. What&rsquo;s working, what isn&rsquo;t, and what we&rsquo;re doing about it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FIT -->
+    <section class="fit">
+        <div class="container--narrow reveal">
+            <p class="section-label">Who we work with</p>
+            <h2 class="section-title">Built for B2B</h2>
+            <div class="fit-content">
+                <p>We work best with companies that have a considered purchase cycle &mdash; typically SaaS, technology, professional services, or complex industrial products. Our sweet spot is businesses spending &pound;5k&ndash;50k per month on paid media that want better returns without building a full in-house team.</p>
+                <p class="fit-note">If you&rsquo;re a B2C brand, an e-commerce shop, or looking for someone to &ldquo;run some ads&rdquo; without caring about downstream metrics &mdash; we&rsquo;re probably not the right fit. And that&rsquo;s fine.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container reveal">
+            <p class="section-label">Get started</p>
+            <h2 class="section-title">Let&rsquo;s make your ad spend work harder.</h2>
+            <p class="section-lead">No pitch decks. No pressure. Just an honest conversation about what&rsquo;s possible.</p>
+            <a href="mailto:hello@mediametrics.co.uk" class="cta-btn">Book a free consultation</a>
+            <p class="cta-email">or email us at <a href="mailto:hello@mediametrics.co.uk">hello@mediametrics.co.uk</a></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Media Metrics. London, UK.</p>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        // Nav shrink on scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
