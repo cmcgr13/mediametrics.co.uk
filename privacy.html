@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Media Metrics</title>
+    <meta name="description" content="Privacy policy for Media Metrics — how we collect, use, and protect your personal data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f; --bg-elevated: #111118; --bg-card: #16161f; --bg-subtle: #1c1c28;
+            --text-primary: #e8e6e1; --text-secondary: #9a9890; --text-muted: #5c5a55;
+            --accent: #3ecf8e; --accent-dim: rgba(62,207,142,0.12); --accent-glow: rgba(62,207,142,0.06);
+            --border: rgba(62,207,142,0.08);
+            --serif: 'PT Serif', Georgia, serif; --sans: 'PT Sans', -apple-system, sans-serif;
+        }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: var(--sans); background: var(--bg-primary); color: var(--text-secondary); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: padding 0.3s ease; }
+        nav.scrolled { padding: 0.75rem 2rem; }
+        .nav-logo { display: flex; align-items: center; position: relative; height: 48px; }
+        .logo-full { height: 42px; width: auto; opacity: 1; transition: opacity 0.3s ease; }
+        .logo-icon { height: 34px; width: auto; position: absolute; left: 0; opacity: 0; transition: opacity 0.3s ease; }
+        nav.scrolled .logo-full { opacity: 0; pointer-events: none; }
+        nav.scrolled .logo-icon { opacity: 1; }
+        .nav-cta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; padding: 0.5rem 1.25rem; border: 1px solid rgba(62,207,142,0.3); border-radius: 2px; transition: all 0.3s ease; }
+        .nav-cta:hover { background: var(--accent); color: var(--bg-primary); }
+
+        .page-content { max-width: 720px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+        .page-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+        .page-title { font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .page-updated { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 3rem; }
+
+        .policy-section { margin-bottom: 2.5rem; }
+        .policy-section h2 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--text-primary); margin-bottom: 0.75rem; }
+        .policy-section p { font-size: 0.97rem; line-height: 1.85; margin-bottom: 0.85rem; }
+        .policy-section p:last-child { margin-bottom: 0; }
+        .policy-section ul { padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.85rem; }
+        .policy-section ul li { font-size: 0.97rem; line-height: 1.85; margin-bottom: 0.3rem; }
+
+        .highlight-block { padding: 1.25rem 1.5rem; border-left: 2px solid var(--accent); background: var(--accent-dim); border-radius: 0 3px 3px 0; margin: 1.25rem 0; }
+        .highlight-block p { font-size: 0.95rem; color: var(--text-primary); margin: 0; }
+
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 2.5rem 0; }
+
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(62,207,142,0.3); transition: border-color 0.3s; }
+        a:hover { border-color: var(--accent); }
+
+        footer { padding: 1.75rem 2rem; border-top: 1px solid var(--border); text-align: center; }
+        footer p { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.05em; }
+        footer a { font-size: 0.75rem; color: var(--text-muted); border-bottom-color: rgba(92,90,85,0.4); }
+        footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .page-content { padding: 6rem 1.5rem 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <a href="/" class="nav-logo">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgMjYwIDY0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMWExYTFhIi8+CiAgPHJlY3QgeD0iMTIiIHk9IjI3IiB3aWR0aD0iNSIgaGVpZ2h0PSIyMiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjIxIiB5PSIxNSIgd2lkdGg9IjUiIGhlaWdodD0iMzQiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSIzMCIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjI2IiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+CiAgPHJlY3QgeD0iMzkiIHk9IjExIiB3aWR0aD0iNSIgaGVpZ2h0PSIzOCIgcng9IjIuNSIgZmlsbD0iIzIyYzU1ZSIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxOSIgd2lkdGg9IjUiIGhlaWdodD0iMzAiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8dGV4dCB4PSI3NiIgeT0iMjgiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRURJQTwvdGV4dD4KICA8dGV4dCB4PSI3NiIgeT0iNTAiIGZvbnQtZmFtaWx5PSJETSBTYW5zLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNDAwIiBmb250LXNpemU9IjIwIiBmaWxsPSIjZmZmZmZmIiBsZXR0ZXItc3BhY2luZz0iMS41Ij5NRVRSSUNTPC90ZXh0Pgo8L3N2Zz4K" class="logo-full" alt="Media Metrics">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMiIgZmlsbD0iIzFhMWExYSIvPgogIDxyZWN0IHg9IjEyIiB5PSIyNyIgd2lkdGg9IjUiIGhlaWdodD0iMjIiIHJ4PSIyLjUiIGZpbGw9IiNmZmZmZmYiLz4KICA8cmVjdCB4PSIyMSIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjM0IiByeD0iMi41IiBmaWxsPSIjMjJjNTVlIi8+CiAgPHJlY3QgeD0iMzAiIHk9IjIzIiB3aWR0aD0iNSIgaGVpZ2h0PSIyNiIgcng9IjIuNSIgZmlsbD0iI2ZmZmZmZiIvPgogIDxyZWN0IHg9IjM5IiB5PSIxMSIgd2lkdGg9IjUiIGhlaWdodD0iMzgiIHJ4PSIyLjUiIGZpbGw9IiMyMmM1NWUiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTkiIHdpZHRoPSI1IiBoZWlnaHQ9IjMwIiByeD0iMi41IiBmaWxsPSIjZmZmZmZmIi8+Cjwvc3ZnPgo=" class="logo-icon" alt="Media Metrics">
+        </a>
+        <a href="/#contact" class="nav-cta">Get in touch</a>
+    </nav>
+
+    <main class="page-content">
+        <p class="page-label">Legal</p>
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="page-updated">Last updated: March 2026</p>
+
+        <div class="policy-section">
+            <p>Media Metrics is a trading name operated by Conor McGregor, based in the United Kingdom. We take the privacy of everyone who interacts with our website seriously. This policy explains what personal data we collect, why we collect it, and what we do with it.</p>
+            <p>If you have any questions, contact us at <a href="mailto:hello@mediametrics.co.uk">hello@mediametrics.co.uk</a>.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>1. Who we are</h2>
+            <p>Data controller: Conor McGregor, trading as Media Metrics.<br>
+            Contact: <a href="mailto:hello@mediametrics.co.uk">hello@mediametrics.co.uk</a><br>
+            Jurisdiction: United Kingdom (UK GDPR applies)</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>2. What data we collect and why</h2>
+
+            <p><strong style="color: var(--text-primary);">Enquiry form data</strong><br>
+            When you submit an enquiry via the contact form on this website, we collect your name, email address, company name, and the message you provide. We use this information solely to respond to your enquiry.</p>
+
+            <p><strong style="color: var(--text-primary);">Google Fonts</strong><br>
+            This website loads fonts from Google's CDN (fonts.googleapis.com). When your browser requests a font file, Google may log your IP address and browser user-agent as part of standard server logging. We do not control this data. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+            <p><strong style="color: var(--text-primary);">Advertising tags (where active)</strong><br>
+            Where we run paid advertising campaigns, we may use the following third-party tracking technologies on this site:</p>
+            <ul>
+                <li><strong style="color: var(--text-primary);">Google Ads tag</strong> — used for conversion tracking and remarketing. Google may set cookies on your device to associate your visit with ad interactions. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</li>
+                <li><strong style="color: var(--text-primary);">LinkedIn Insight Tag</strong> — used for conversion tracking and to build LinkedIn-targeted audiences. LinkedIn may set cookies linked to your LinkedIn profile if you are logged in. See <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">LinkedIn's privacy policy</a>.</li>
+                <li><strong style="color: var(--text-primary);">Meta Pixel</strong> — used for conversion tracking and retargeting via Meta platforms (Facebook, Instagram). Meta may associate your visit with your Meta account. See <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta's privacy policy</a>.</li>
+            </ul>
+            <p>These tags are only active on the site where advertising campaigns are running. No advertising data is sold or shared with parties other than the respective ad platforms.</p>
+
+            <div class="highlight-block">
+                <p>We do not collect any special category data (health, financial, political views, etc.) and we do not knowingly collect data from individuals under the age of 18.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>3. Lawful basis for processing</h2>
+            <p>For enquiry form submissions, our lawful basis is <strong style="color: var(--text-primary);">legitimate interests</strong> (UK GDPR Article 6(1)(f)). We have a legitimate interest in receiving and responding to business enquiries, and this processing does not override your rights — you contact us voluntarily to request information.</p>
+            <p>For advertising tracking (Google Ads, LinkedIn, Meta), our lawful basis is <strong style="color: var(--text-primary);">consent</strong> where required, and legitimate interests for business-to-business marketing measurement. We will implement a cookie consent mechanism prior to activating any advertising tags.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>4. How data is stored</h2>
+            <p>Enquiry form data is processed and stored by <strong style="color: var(--text-primary);">Tally</strong> (tally.so), a third-party form platform. Data submitted through the form is held on Tally's servers. Tally's privacy policy is available at <a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener">tally.so/help/privacy-policy</a>.</p>
+            <p>We access submitted enquiries via the Tally dashboard. We do not operate our own database or CRM for storing contact data.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>5. How long we keep your data</h2>
+            <p>Enquiry data is retained for <strong style="color: var(--text-primary);">12 months</strong> from the date of submission. After this period, submissions are deleted from the Tally dashboard. If an enquiry results in an active business relationship, data relevant to that relationship may be retained for the duration of the engagement and for a further period as required by law or legitimate business need.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>6. Your rights</h2>
+            <p>Under UK GDPR, you have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong style="color: var(--text-primary);">Right of access</strong> — you can request a copy of the personal data we hold about you.</li>
+                <li><strong style="color: var(--text-primary);">Right to rectification</strong> — you can ask us to correct inaccurate data.</li>
+                <li><strong style="color: var(--text-primary);">Right to erasure</strong> — you can ask us to delete your data where there is no legitimate reason to continue holding it.</li>
+                <li><strong style="color: var(--text-primary);">Right to object</strong> — you can object to processing based on legitimate interests.</li>
+                <li><strong style="color: var(--text-primary);">Right to restriction</strong> — you can ask us to restrict processing in certain circumstances.</li>
+            </ul>
+            <p>To exercise any of these rights, email <a href="mailto:hello@mediametrics.co.uk">hello@mediametrics.co.uk</a>. We will respond within 30 days. There is no charge for making a request.</p>
+            <p>If you are not satisfied with how we handle your data, you have the right to lodge a complaint with the <strong style="color: var(--text-primary);">Information Commissioner's Office (ICO)</strong> at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>7. Third-party sharing</h2>
+            <p>We do not sell, rent, or share your personal data with third parties for their own marketing purposes. Data is shared only with the service providers listed above (Tally, Google, LinkedIn, Meta) to the extent necessary to operate this website and run advertising campaigns.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="policy-section">
+            <h2>8. Changes to this policy</h2>
+            <p>We may update this policy from time to time. The date at the top of this page reflects when it was last revised. Continued use of the website after changes are published constitutes acceptance of the updated policy.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&#169; 2026 Media Metrics. London, UK. &nbsp;&bull;&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        var navEl = document.getElementById("nav");
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 60) { navEl.classList.add("scrolled"); }
+            else { navEl.classList.remove("scrolled"); }
+        });
+    </script>
+</body>
+</html>
